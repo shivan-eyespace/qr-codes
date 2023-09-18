@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyespace QR Codes</title>
+  </head>
+  <body>
+    <div id="qrcode"></div>
+    <div class="links">
+      <a href="https://www.eyespacestatus.com">www.eyespacestatus.com</a>
+    </div>
+  </body>
+  <script type="text/javascript" src="qrcode.min.js"></script>
+  <script type="text/javascript">
+    var qr = new QRCode(document.getElementById("qrcode"), {
+      text: "https://www.eyespacestatus.com",
+      width: 720,
+      height: 720,
+      colorDark: "#000000",
+      colorLight: "#ffffff",
+    });
+  </script>
+  <style>
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    :root {
+      --primary: #eafae1;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      min-height: 100vh;
+      min-width: 100vw;
+      justify-content: center;
+      align-items: center;
+      background: var(--primary);
+      animation: fadeIn 1s;
+    }
+
+    #qrcode {
+      padding: 1rem;
+      border: 2px darkgray double;
+      background: snow;
+    }
+
+    #qrcode:hover {
+      box-shadow: 0.25em 0.25rem 1.5rem black;
+      transition-duration: 0.5s;
+    }
+  </style>
+</html>
